@@ -6,7 +6,11 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
     postText: { type: String, required: true },
-    // content: { type: String, required: true },
+    image: { type: String},
+    user:{
+      type : mongoose.Schema.Types.ObjectId, 
+      ref : 'User'
+    }, 
     createdAt: { type: Date, default: Date.now }, 
     likes : {type: Array, default:[]}
   });
